@@ -66,9 +66,9 @@ public class SeedData implements CommandLineRunner
                                 r3));
         datas.add(new UserRoles(new User(),
                                 r2));
-        User u2 = new User("cinnamon",
+        User u2 = new User("test1",
                            "1234567",
-                           "cinnamon@lambdaschool.local",
+                           "test1@lambdaschool.local",
                            datas);
         u2.getUseremails()
           .add(new Useremail(u2,
@@ -85,9 +85,9 @@ public class SeedData implements CommandLineRunner
         ArrayList<UserRoles> users = new ArrayList<>();
         users.add(new UserRoles(new User(),
                                 r2));
-        User u3 = new User("barnbarn",
-                           "ILuvM4th!",
-                           "barnbarn@lambdaschool.local",
+        User u3 = new User("test2",
+                           "abcdefg",
+                           "test2@lambdaschool.local",
                            users);
         u3.getUseremails()
           .add(new Useremail(u3,
@@ -97,18 +97,18 @@ public class SeedData implements CommandLineRunner
         users = new ArrayList<>();
         users.add(new UserRoles(new User(),
                                 r2));
-        User u4 = new User("puttat",
+        User u4 = new User("test3",
                            "password",
-                           "puttat@school.lambda",
+                           "test3@school.lambda",
                            users);
         userService.save(u4);
 
         users = new ArrayList<>();
         users.add(new UserRoles(new User(),
                                 r2));
-        User u5 = new User("misskitty",
+        User u5 = new User("test4",
                            "password",
-                           "misskitty@school.lambda",
+                           "test4@school.lambda",
                            users);
         userService.save(u5);
 
@@ -116,28 +116,28 @@ public class SeedData implements CommandLineRunner
         // https://www.baeldung.com/java-faker
         // https://www.baeldung.com/regular-expressions-java
 
-        FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-US"),
-                                                                    new RandomService());
-        Faker nameFaker = new Faker(new Locale("en-US"));
-
-        for (int i = 0; i < 100; i++)
-        {
-            new User();
-            User fakeUser;
-
-            users = new ArrayList<>();
-            users.add(new UserRoles(new User(),
-                                    r2));
-            fakeUser = new User(nameFaker.name()
-                                         .username(),
-                                "password",
-                                nameFaker.internet()
-                                         .emailAddress(),
-                                users);
-            fakeUser.getUseremails()
-                    .add(new Useremail(fakeUser,
-                                       fakeValuesService.bothify("????##@gmail.com")));
-            userService.save(fakeUser);
-        }
+//        FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-US"),
+//                                                                    new RandomService());
+//        Faker nameFaker = new Faker(new Locale("en-US"));
+//
+//        for (int i = 0; i < 100; i++)
+//        {
+//            new User();
+//            User fakeUser;
+//
+//            users = new ArrayList<>();
+//            users.add(new UserRoles(new User(),
+//                                    r2));
+//            fakeUser = new User(nameFaker.name()
+//                                         .username(),
+//                                "password",
+//                                nameFaker.internet()
+//                                         .emailAddress(),
+//                                users);
+//            fakeUser.getUseremails()
+//                    .add(new Useremail(fakeUser,
+//                                       fakeValuesService.bothify("????##@gmail.com")));
+//            userService.save(fakeUser);
+//        }
     }
 }

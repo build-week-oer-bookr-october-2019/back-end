@@ -33,6 +33,7 @@ import static junit.framework.TestCase.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartHereApplication.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@Transactional
 public class UserServiceImplUnitTest
 {
     @Autowired
@@ -65,7 +66,7 @@ public class UserServiceImplUnitTest
     @Test
     public void B_findUserById()
     {
-        assertEquals("admin", userService.findUserById(4).getUsername());
+        assertEquals("admin", userService.findUserById(28).getUsername());
     }
 
     @Test(expected = ResourceNotFoundException.class)
@@ -83,7 +84,7 @@ public class UserServiceImplUnitTest
     @Test
     public void D_delete()
     {
-        userService.delete(13);
+        userService.delete(28);
         assertEquals(4, userService.findAll(Pageable.unpaged()).size());
     }
 
@@ -160,7 +161,7 @@ public class UserServiceImplUnitTest
         u2.getUseremails()
           .add(new Useremail(u2, "bunny@email.thump"));
 
-        User updatedu2 = userService.update(u2, 7, false);
+        User updatedu2 = userService.update(u2, 37, false);
 
         System.out.println("*** DATA ***");
         System.out.println(updatedu2);
@@ -190,7 +191,7 @@ public class UserServiceImplUnitTest
         u2.getUseremails()
           .add(new Useremail(u2, "bunny@email.thump"));
 
-        User updatedu2 = userService.update(u2, 7, false);
+        User updatedu2 = userService.update(u2, 37, false);
 
         System.out.println("*** DATA ***");
         System.out.println(updatedu2);
@@ -254,13 +255,13 @@ public class UserServiceImplUnitTest
     @Test(expected = ResourceFoundException.class)
     public void IA_addUserRoleUserRoleFound()
     {
-        userService.addUserRole(11, 1);
+        userService.addUserRole(28, 27);
     }
 
     @Test
     public void IB_deleteUserRole()
     {
-        userService.deleteUserRole(11, 1);
+        userService.deleteUserRole(28, 27);
     }
 
     @Test(expected = ResourceNotFoundException.class)
@@ -278,6 +279,6 @@ public class UserServiceImplUnitTest
     @Test
     public void IE_addUserRole()
     {
-        userService.addUserRole(11, 2);
+        userService.addUserRole(37, 25);
     }
 }

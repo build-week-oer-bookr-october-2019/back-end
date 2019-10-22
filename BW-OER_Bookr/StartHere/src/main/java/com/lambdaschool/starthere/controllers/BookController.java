@@ -56,6 +56,17 @@ public class BookController
         return new ResponseEntity<>(myBooks, HttpStatus.OK);
     }
 
+    //http://localhost:2019/books/book/2
+    @GetMapping(value = "books/book/{bookid}",
+                produces = {"application/json"})
+    public ResponseEntity<?> getBookById(
+            @PathVariable
+                    Long bookid)
+    {
+        Book b = bookService.findBookById(bookid);
+        return new ResponseEntity<>(b, HttpStatus.OK);
+    }
+
 //    // http://localhost:2019/data/books/15/authors/2
 //    @PostMapping("/data/books/{bookid}/authors/{authorid}")
 //    public ResponseEntity<?> postBookAuthorByIds(HttpServletRequest request,

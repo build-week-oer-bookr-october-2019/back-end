@@ -1,0 +1,13 @@
+INSERT INTO review (reviewid, reviewer, review, created_by, created_date, last_modified_by, last_modified_date) VALUES (10, 'George Spence', 'Great textbook.','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO review (reviewid, reviewer, review, created_by, created_date, last_modified_by, last_modified_date) VALUES (20, 'Jose Alvarez', 'Amazing reference.','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO review (reviewid, reviewer, review, created_by, created_date, last_modified_by, last_modified_date) VALUES (30, 'Michael Nolan', 'Good textbook.','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO review (reviewid, reviewer, review, created_by, created_date, last_modified_by, last_modified_date) VALUES (40, 'Alex Johnson', 'This book could be better.','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO review (reviewid, reviewer, review, created_by, created_date, last_modified_by, last_modified_date) VALUES (50, 'Jordan Smith', 'This book is terrible','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+INSERT INTO book (bookid, title, author, publisher, license, created_by, created_date, last_modified_by, last_modified_date) VALUES (10, 'Fundamentals of Chemistry!!', 'Mikey Billings', 'Pearson', 'License I','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO book (bookid, title, author, publisher, license, created_by, created_date, last_modified_by, last_modified_date) VALUES (20, 'Macroeconomics', 'Cat Stevens', 'Pearson', 'License II','SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO book (bookid, title, author, publisher, license, created_by, created_date, last_modified_by, last_modified_date) VALUES (30, 'Human Psychology', 'Lynn Adams', 'Cengage', 'License III', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO book (bookid, title, author, publisher, license, created_by, created_date, last_modified_by, last_modified_date) VALUES (40, 'Calculus I', 'James Lee Brady', 'McGraw-Hill', 'License IV', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+INSERT INTO book (bookid, title, author, publisher, license, created_by, created_date, last_modified_by, last_modified_date) VALUES (50, 'Texas History', 'Richard Hardman', 'Pearson', 'License V', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
+
+alter sequence hibernate_sequence restart with 25;

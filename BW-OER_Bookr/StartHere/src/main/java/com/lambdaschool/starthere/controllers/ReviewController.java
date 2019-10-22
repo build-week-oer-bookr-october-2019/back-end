@@ -57,6 +57,17 @@ public class ReviewController
         return new ResponseEntity<>(myReviews, HttpStatus.OK);
     }
 
+    //http://localhost:2019/reviews/review/2
+    @GetMapping(value = "reviews/review/{reviewid}",
+                produces = {"application/json"})
+    public ResponseEntity<?> getReviewById(
+            @PathVariable
+                    Long reviewid)
+    {
+        Review r = reviewService.findReviewById(reviewid);
+        return new ResponseEntity<>(r, HttpStatus.OK);
+    }
+
     // POST http://localhost:2019/review/book/1
     @PostMapping(value = "/review/book/{bookid}",
                  consumes = {"application/json"},
