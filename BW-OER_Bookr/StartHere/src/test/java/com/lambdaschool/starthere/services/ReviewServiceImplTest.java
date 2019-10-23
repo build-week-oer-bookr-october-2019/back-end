@@ -55,16 +55,25 @@ public class ReviewServiceImplTest
         assertEquals("Great textbook.", reviewService.findReviewById(1).getReview());
     }
 
-//    @Test
-//    public void C_save()
-//    {
+    @Test
+    public void C_save()
+    {
 //        Book book = new Book();
 //        Review r1 = new Review("John", "Amazing book!", book);
-//        r1.setReviewid(10);
+//        r1.setReviewid(20);
 //
 //        reviewService.save(r1);
-//        Assert.assertEquals(6, reviewService.findAll().size());
-//    }
+//        Assert.assertEquals(11, reviewService.findAll().size());
+
+        Book book = new Book();
+        Review r1 = new Review("John", "Amazing book!", book);
+
+
+        Review saveR1 = reviewService.save(r1);
+
+
+        assertEquals("John", saveR1.getReviewer());
+    }
 
     @Test
     public void D_delete()

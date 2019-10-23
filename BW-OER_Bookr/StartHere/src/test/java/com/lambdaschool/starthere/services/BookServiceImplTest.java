@@ -40,7 +40,7 @@ public class BookServiceImplTest
     @Test
     public void A_findAll()
     {
-        assertEquals(5, bookService.findAll().size());
+        assertEquals(10, bookService.findAll().size());
     }
 
     @Test
@@ -59,6 +59,6 @@ public class BookServiceImplTest
     public void C_delete()
     {
         bookService.delete(1);
-        assertEquals(4, bookService.findAll().size());
+        assertEquals(9, bookService.findAll().size());
     }
 }
