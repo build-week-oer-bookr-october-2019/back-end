@@ -3,7 +3,6 @@ package com.lambdaschool.starthere.services;
 import com.lambdaschool.starthere.StartHereApplication;
 import com.lambdaschool.starthere.models.Book;
 import com.lambdaschool.starthere.models.Review;
-import com.lambdaschool.starthere.models.UserRoles;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -12,11 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartHereApplication.class)
@@ -58,12 +53,6 @@ public class ReviewServiceImplTest
     @Test
     public void C_save()
     {
-//        Book book = new Book();
-//        Review r1 = new Review("John", "Amazing book!", book);
-//        r1.setReviewid(20);
-//
-//        reviewService.save(r1);
-//        Assert.assertEquals(11, reviewService.findAll().size());
 
         Book book = new Book();
         Review r1 = new Review("John", "Amazing book!", book);

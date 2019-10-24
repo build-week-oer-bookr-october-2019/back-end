@@ -2,7 +2,6 @@ package com.lambdaschool.starthere.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lambdaschool.starthere.models.Book;
-import com.lambdaschool.starthere.models.Review;
 import com.lambdaschool.starthere.services.BookService;
 import org.junit.After;
 import org.junit.Before;
@@ -80,10 +79,6 @@ public class BookControllerUnitTest
     {
         String apiUrl = "/books/books";
 
-        //        String courseName = "JavaScript";
-        //        Instructor instructor = new Instructor("John");
-        //        Course c1 = new Course(courseName,instructor);
-
         Mockito.when(bookService.findAll()).thenReturn((ArrayList<Book>) bookList);
 
         RequestBuilder rb = MockMvcRequestBuilders.get(apiUrl).accept(MediaType.APPLICATION_JSON);
@@ -117,34 +112,6 @@ public class BookControllerUnitTest
         assertEquals("Rest API Returns List", er, tr);
     }
 
-    //    @Test
-    //    public void addNewReview() throws Exception
-    //    {
-    //        String apiUrl = "/review/book/{bookid}";
-    //
-    //        // build a restaurant
-    //        //        ArrayList<RestaurantPayments> thisPay = new ArrayList<>();
-    //        String reviewer = "Marta";
-    //        String review = "This book is very good.";
-    //        Book book1 = new Book();
-    //
-    //        Review reviewA = new Review(reviewer, review, book1);
-    //
-    //        reviewA.setReviewid(4);
-    //        book1.setBookid(100);
-    //        ObjectMapper mapper = new ObjectMapper();
-    //        String courseString = mapper.writeValueAsString(reviewA);
-    //
-    ////        newReview.setBook(bookService.findBookById(bookid));
-    ////          reviewService.save(newReview);
-    //        Mockito.when(reviewService.save(any(Review.class))).thenReturn(reviewA);
-    //        Mockito.when(reviewService.save(any(Review.class))).thenReturn(reviewA);
-    //
-    //        RequestBuilder rb = MockMvcRequestBuilders.post(apiUrl)
-    //                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
-    //                .content(courseString);
-    //        mockMvc.perform(rb).andExpect(status().isCreated()).andDo(MockMvcResultHandlers.print());
-    //    }
 
     @Test
     public void deleteBookById()throws Exception

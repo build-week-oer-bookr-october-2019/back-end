@@ -161,7 +161,7 @@ public class UserServiceImplUnitTest
         u2.getUseremails()
           .add(new Useremail(u2, "bunny@email.thump"));
 
-        User updatedu2 = userService.update(u2, 37, false);
+        User updatedu2 = userService.update(u2, 31, false);
 
         System.out.println("*** DATA ***");
         System.out.println(updatedu2);
@@ -191,7 +191,7 @@ public class UserServiceImplUnitTest
         u2.getUseremails()
           .add(new Useremail(u2, "bunny@email.thump"));
 
-        User updatedu2 = userService.update(u2, 37, false);
+        User updatedu2 = userService.update(u2, 31, false);
 
         System.out.println("*** DATA ***");
         System.out.println(updatedu2);

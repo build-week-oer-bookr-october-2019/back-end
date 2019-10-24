@@ -3,10 +3,8 @@ package com.lambdaschool.starthere.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lambdaschool.starthere.models.Book;
 import com.lambdaschool.starthere.models.Review;
-import com.lambdaschool.starthere.models.User;
 import com.lambdaschool.starthere.services.BookService;
 import com.lambdaschool.starthere.services.ReviewService;
-import com.lambdaschool.starthere.services.UserService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -88,9 +86,6 @@ public class ReviewControllerUnitTest
     {
         String apiUrl = "/reviews/reviews";
 
-//        String courseName = "JavaScript";
-//        Instructor instructor = new Instructor("John");
-//        Course c1 = new Course(courseName,instructor);
 
         Mockito.when(reviewService.findAll()).thenReturn((ArrayList<Review>) reviewList);
 
@@ -125,34 +120,31 @@ public class ReviewControllerUnitTest
         assertEquals("Rest API Returns List", er, tr);
     }
 
-//    @Test
-//    public void addNewReview() throws Exception
-//    {
-//        String apiUrl = "/review/book/{bookid}";
-//
-//        // build a restaurant
-//        //        ArrayList<RestaurantPayments> thisPay = new ArrayList<>();
-//        String reviewer = "Marta";
-//        String review = "This book is very good.";
-//        Book book1 = new Book();
-//
-//        Review reviewA = new Review(reviewer, review, book1);
-//
-//        reviewA.setReviewid(4);
-//        book1.setBookid(100);
-//        ObjectMapper mapper = new ObjectMapper();
-//        String courseString = mapper.writeValueAsString(reviewA);
-//
-////        newReview.setBook(bookService.findBookById(bookid));
-////          reviewService.save(newReview);
-//        Mockito.when(reviewService.save(any(Review.class))).thenReturn(reviewA);
-//        Mockito.when(reviewService.save(any(Review.class))).thenReturn(reviewA);
-//
-//        RequestBuilder rb = MockMvcRequestBuilders.post(apiUrl)
-//                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
-//                .content(courseString);
-//        mockMvc.perform(rb).andExpect(status().isCreated()).andDo(MockMvcResultHandlers.print());
-//    }
+    @Test
+    public void addNewReview() throws Exception
+    {
+        String apiUrl = "/review/book/100";
+
+        String reviewer = "Marta";
+        String review = "This book is very good.";
+        Book book1 = new Book();
+
+        Review reviewA = new Review(reviewer, review, book1);
+
+        reviewA.setReviewid(4);
+        book1.setBookid(100);
+        ObjectMapper mapper = new ObjectMapper();
+        String courseString = mapper.writeValueAsString(reviewA);
+
+
+        Mockito.when(reviewService.save(any(Review.class))).thenReturn(reviewA);
+        Mockito.when(reviewService.save(any(Review.class))).thenReturn(reviewA);
+
+        RequestBuilder rb = MockMvcRequestBuilders.post(apiUrl)
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
+                .content(courseString);
+        mockMvc.perform(rb).andExpect(status().isCreated()).andDo(MockMvcResultHandlers.print());
+    }
 
     @Test
     public void deleteReviewById()throws Exception

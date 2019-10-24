@@ -10,12 +10,9 @@ import org.junit.runners.MethodSorters;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartHereApplication.class)
@@ -52,7 +49,7 @@ public class BookServiceImplTest
     @Test
     public void B_findBookById()
     {
-        assertEquals("Macroeconomics", bookService.findBookById(2).getTitle());
+        assertEquals("Chemistry: The Molecular Nature of Matter and Change", bookService.findBookById(2).getTitle());
     }
 
     @Test
