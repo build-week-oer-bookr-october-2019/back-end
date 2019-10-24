@@ -13,11 +13,6 @@ public interface BookService
 
     Book findBookById(long id);
 
-//    Book save (Book book);
-
     void delete(long id);
 
-//    Book update(Book book, long id);
-
-//    void addBookToAuthor(long bookid, long authorid);
 }

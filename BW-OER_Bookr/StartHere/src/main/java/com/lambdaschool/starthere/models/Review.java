@@ -3,10 +3,7 @@ package com.lambdaschool.starthere.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @ApiModel(value="Review", description = "The Review Entity")
 @Entity

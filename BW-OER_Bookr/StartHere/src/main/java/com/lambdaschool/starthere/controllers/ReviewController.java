@@ -1,6 +1,5 @@
 package com.lambdaschool.starthere.controllers;
 
-import com.lambdaschool.starthere.models.Book;
 import com.lambdaschool.starthere.models.Review;
 import com.lambdaschool.starthere.services.BookService;
 import com.lambdaschool.starthere.services.ReviewService;
@@ -13,7 +12,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.ArrayList;
 
@@ -80,32 +78,6 @@ public class ReviewController
         reviewService.save(newReview);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
-    //    // http://localhost:2019/data/books/15/authors/2
-    //    @PostMapping("/data/books/{bookid}/authors/{authorid}")
-    //    public ResponseEntity<?> postBookAuthorByIds(HttpServletRequest request,
-    //                                               @PathVariable
-    //                                                       long bookid,
-    //                                               @PathVariable
-    //                                                       long authorid)
-    //    {
-    //
-    //        bookService.addBookToAuthor(bookid,
-    //                authorid);
-    //
-    //        return new ResponseEntity<>(HttpStatus.CREATED);
-    //    }
-    //
-    //    @PutMapping(value = "data/books/{bookid}")
-    //    public ResponseEntity<?> updateBook(
-    //            @RequestBody
-    //                    Book updateBook,
-    //            @PathVariable
-    //                    long bookid)
-    //    {
-    //        bookService.update(updateBook, bookid);
-    //        return new ResponseEntity<>(HttpStatus.OK);
-    //    }
 
     // http://localhost:2019/data/reviews/1
     @DeleteMapping("data/reviews/{reviewid}")

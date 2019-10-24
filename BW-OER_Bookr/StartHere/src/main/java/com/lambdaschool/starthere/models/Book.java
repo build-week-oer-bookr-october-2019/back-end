@@ -3,7 +3,6 @@ package com.lambdaschool.starthere.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +40,7 @@ public class Book extends Auditable
                       example = "License")
     private String license;
 
-
-    @ApiModelProperty(name = "reviews", value = "review for the textbook", example = "Calling Texas Home")
+    @ApiModelProperty(name = "reviews", value = "review for the textbook", example = "Excellent Book.")
     @OneToMany(mappedBy = "book")
     @JsonIgnoreProperties("books")
     private List<Review> reviews = new ArrayList<>();

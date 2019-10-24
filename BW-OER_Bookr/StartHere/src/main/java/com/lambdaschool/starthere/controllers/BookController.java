@@ -1,6 +1,5 @@
 package com.lambdaschool.starthere.controllers;
 
-
 import com.lambdaschool.starthere.models.Book;
 import com.lambdaschool.starthere.services.BookService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -12,8 +11,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
 @RestController
@@ -22,9 +19,6 @@ public class BookController
 {
     @Autowired
     private BookService bookService;
-
-//    @Autowired
-//    private AuthorService authorService;
 
     @ApiOperation(value= "return all Books", response= Book.class, responseContainer = "List")
 
@@ -48,7 +42,6 @@ public class BookController
         return new ResponseEntity<>(myBooks, HttpStatus.OK);
     }
 
-
     @GetMapping(value = "books/books", produces = {"application/json"})
     public ResponseEntity<?> listAllBooks()
     {
@@ -67,32 +60,6 @@ public class BookController
         return new ResponseEntity<>(b, HttpStatus.OK);
     }
 
-//    // http://localhost:2019/data/books/15/authors/2
-//    @PostMapping("/data/books/{bookid}/authors/{authorid}")
-//    public ResponseEntity<?> postBookAuthorByIds(HttpServletRequest request,
-//                                               @PathVariable
-//                                                       long bookid,
-//                                               @PathVariable
-//                                                       long authorid)
-//    {
-//
-//        bookService.addBookToAuthor(bookid,
-//                authorid);
-//
-//        return new ResponseEntity<>(HttpStatus.CREATED);
-//    }
-//
-//    @PutMapping(value = "data/books/{bookid}")
-//    public ResponseEntity<?> updateBook(
-//            @RequestBody
-//                    Book updateBook,
-//            @PathVariable
-//                    long bookid)
-//    {
-//        bookService.update(updateBook, bookid);
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
-
     // http://localhost:2019/data/books/1
     @DeleteMapping("data/books/{bookid}")
     public ResponseEntity<?> deleteBookById(
@@ -102,7 +69,4 @@ public class BookController
         bookService.delete(bookid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-
 }
